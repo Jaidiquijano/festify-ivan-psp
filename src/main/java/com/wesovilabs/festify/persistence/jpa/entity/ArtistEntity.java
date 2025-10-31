@@ -17,6 +17,7 @@ public class ArtistEntity {
     private String name;
     @Column(length = 2, nullable = false)
     private String country;
+
     @Column(columnDefinition = "text[]", nullable = false)
     @org.hibernate.annotations.JdbcTypeCode(org.hibernate.type.SqlTypes.ARRAY)
     private List<String> genres = new ArrayList<>();
