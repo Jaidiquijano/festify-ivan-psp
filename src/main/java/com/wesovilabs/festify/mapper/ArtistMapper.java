@@ -10,6 +10,9 @@ public class ArtistMapper {
     private static String toPubId(Long artistId) {
         return "ART-"+artistId;
     }
+
+
+
     public static ArtistResumeResponse mapArtistToArtistResume(ArtistEntity artistEntity) {
         return new ArtistResumeResponse(
                 toPubId(artistEntity.getId()),

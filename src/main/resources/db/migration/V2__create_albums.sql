@@ -12,7 +12,7 @@ $$ LANGUAGE plpgsql;
 
 -- Tabla de álbumes (simplificada)
 CREATE TABLE IF NOT EXISTS albums (
-                                      id               BIGINT PRIMARY KEY DEFAULT nextval('albums_id_seq'),
+    id               BIGINT PRIMARY KEY DEFAULT nextval('albums_id_seq'),
     artist_id        BIGINT       NOT NULL,
     title            VARCHAR(255) NOT NULL,
     release_date     DATE,

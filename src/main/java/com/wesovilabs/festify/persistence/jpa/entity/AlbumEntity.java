@@ -11,24 +11,34 @@ import java.time.LocalDateTime;
 public class AlbumEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long artistId;
-    @Column(name="title",nullable = false)
+    private Long id;
+
+    @Column(name = "artist_id")
+    private Long artistId;
+
+    @Column(name = "title")
     private String title;
-    @Column (name ="release_date")
+
+    @Column(name = "release_date")
     private LocalDate releaseDate;
-    @Column (name ="tracks_count")
+
+    @Column(name = "tracks_count")
     private Integer tracksCount;
-    @Column (name ="duration_seconds")
+
+    @Column(name = "duration_seconds")
     private Integer durationSeconds;
+
     @Column(name = "created_at")
     private Timestamp createdAt;
+
     @Column(name = "updated_at")
     private Timestamp updatedAt;
 
     public AlbumEntity() {
     }
 
-    public AlbumEntity(String title, long artistId, LocalDate releaseDate, Integer tracksCount, Integer durationSeconds, Timestamp createdAt, Timestamp updatedAt) {
+    public AlbumEntity(Long id,  Long artistId,String title, LocalDate releaseDate, Integer tracksCount, Integer durationSeconds, Timestamp createdAt, Timestamp updatedAt) {
+        this.id = id;
         this.title = title;
         this.artistId = artistId;
         this.releaseDate = releaseDate;
@@ -38,11 +48,19 @@ public class AlbumEntity {
         this.updatedAt = updatedAt;
     }
 
-    public long getArtistId() {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public Long getArtistId() {
         return artistId;
     }
 
-    public void setArtistId(long artistId) {
+    public void setArtistId(Long artistId) {
         this.artistId = artistId;
     }
 
@@ -94,3 +112,5 @@ public class AlbumEntity {
         this.updatedAt = updatedAt;
     }
 }
+
+
